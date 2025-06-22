@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from flask.cli import load_dotenv
+
 
 # from django.conf.global_settings import LOGIN_URL
 
@@ -22,16 +24,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j@_z01nk5i_74mhidy6uu$^(iuy1aos)*7$i^l3*y1=9m%@!75'
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # PAYSTACK KEYS
-PAYSTACK_PUBLIC_KEY = 'pk_live_dd8a0aa12ea8b71e42f44a606b1a8bd410d5cd38'
-PAYSTACK_SECRET_KEY = 'sk_live_7c876f7c2ce197923c05aaa07ec8bc2c727462c7'
+PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')
+PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
