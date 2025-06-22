@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from decouple import config
+
 
 # from django.conf.global_settings import LOGIN_URL
 
@@ -22,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j@_z01nk5i_74mhidy6uu$^(iuy1aos)*7$i^l3*y1=9m%@!75'
+SECRET_KEY = '=+&j=py*ax^hr8)o2a96*kz$b36i8jq1p%#0+e!i3dnp_i9*m2'
+SECRET_KEY = config('SECRET_KEY')
 
 # PAYSTACK KEYS
 PAYSTACK_PUBLIC_KEY = 'pk_live_dd8a0aa12ea8b71e42f44a606b1a8bd410d5cd38'
