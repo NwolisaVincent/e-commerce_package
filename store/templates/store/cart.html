@@ -1,0 +1,12 @@
+<h2>Your Cart</h2>
+<ul>
+    {% for item in items %}
+    <li>{{ item.product.name }}
+    (x{{ item.quantity }}) - ₦{{ item.product.price }}</li>
+    {% endfor %}
+</ul>
+<h3>Total: ${{ total }}</h3>
+<a href="{% url 'checkout' %}">Checkout</a>
+<a href="{% url 'initiate_payment' %}">
+    <button>Checkout with Paystack</button>
+</a>
