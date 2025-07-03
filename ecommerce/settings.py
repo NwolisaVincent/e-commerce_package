@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT, SECURE_SSL_REDIRECT, SESSION_COOKIE_SECURE, \
-    CSRF_COOKIE_SECURE
-from flask.cli import load_dotenv
+import dj_database_url
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # from django.conf.global_settings import LOGIN_URL
@@ -27,20 +29,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-load_dotenv()
-SECRET_KEY = os.getenv('SECRET_KEY')
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret')
 
 # PAYSTACK KEYS
-PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')
-PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
+PAYSTACK_PUBLIC_KEY = os.environ.get('PAYSTACK_PUBLIC_KEY')
+PAYSTACK_SECRET_KEY = os.environ.get('PAYSTACK_SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+DEBUG = os.environ.get('DEBUG', 'False')=='True'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'e-commerce_package-2.onrender.com']
 
@@ -87,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ecommerce.wsgi.application'
+WSGI_APPLICATION = 'ecommerce.ecommerce.wsgi.application'
 
 
 # Database
