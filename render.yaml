@@ -2,10 +2,14 @@ services:
   - type: web
     name: ecommerce-backend
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn e-commerce_package.wsgi:application
+    buildCommand:
+      pip install --upgrade pip setuptools wheel
+      pip install -r requirements.txt
+    startCommand: gunicorn ecommerce.ecommerce.wsgi:application
     envVars:
+      - key: DJANGO_SECRET_KEY
+        sync: false
       - key: DEBUG
         value: False
-      - key: SECRET_KEY
-        value: your-secret-key
+      - key: ALLOWED_HOSTS
+        value: e-commerce-package-2.onrender.com
