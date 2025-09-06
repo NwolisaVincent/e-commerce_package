@@ -41,9 +41,9 @@ The project follows a modular structure so that it can be extended to production
 
 ## 🏗️ Tech Stack
 
-- **Python** (FastAPI / Flask / Django REST Framework – pick one based on preference)
-- **PostgreSQL / MySQL** (Database)
-- **SQLAlchemy / Django ORM** (ORM)
+- **Python** (Django REST Framework)
+- **db.sqlite3** (Database)
+- **Django ORM** (ORM)
 - **JWT** (Authentication)
 - **Stripe / PayPal API** (Payments)
 - **Docker** (optional, for containerization)
