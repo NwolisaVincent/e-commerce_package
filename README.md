@@ -49,18 +49,18 @@ The project follows a modular structure so that it can be extended to production
 - **Docker** (optional, for containerization)
 
 ---
-
 ## 📂 Project Structure
 
 ### ecommerce-backend/
-### │── app/
-### │ ├── models/ # Database models
-### │ ├── routes/ # API routes (auth, products, orders, etc.)
-### │ ├── services/ # Business logic
-### │ ├── utils/ # Helper functions
-### │ ├── init.py
-### │── tests/ # Unit tests
-### │── requirements.txt # Dependencies
-### │── config.py # Environment configs
-### │── README.md # Documentation
-### │── main.py # Application entry point
+##### │── app/
+##### │ ├── models/ # Database models
+##### │ ├── routes/ # API routes (auth, products, orders, etc.)
+##### │ ├── services/ # Business logic
+##### │ ├── utils/ # Helper functions
+##### │ ├── init.py
+##### │── tests/ # Unit tests
+##### │── requirements.txt # Dependencies
+##### │── config.py # Environment configs
+##### │── README.md # Documentation
+##### │── main.py # Application entry point
+---
